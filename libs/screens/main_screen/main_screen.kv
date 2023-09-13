@@ -1,0 +1,47 @@
+#_0tools_style_path
+#import Shop libs.screens.shop.shop.Shop
+#_0tools_style_path
+#start_import
+<MainScreen>
+    #start_ObjectProperty
+    name : 'main_screen'
+    shop_id : shop_id
+    MDBoxLayout:
+        orientation : 'vertical'
+        padding : [0,5,0,0]
+        MDTextField:
+            id : search_
+
+            pos_hint : {'center_x' : .5}
+            mode: "fill"
+            radius : [5,]
+            size_hint_x : None
+
+            size_hint_x : .98
+            active_line : False
+            hint_text_color_focus : 0,0,0,0
+            hint_text : "Search in Mizdezh Market" if not self.focus else ""
+            icon_right : "dots-vertical"
+            on_touch_down:
+                #root.menu.open()
+            on_text:
+            line_color : app.theme_cls.primary_palette.lower if self.focus else app.theme_cls.bg_normal
+
+        MDBottomNavigation:
+
+            MDBottomNavigationItem:
+                name: 'shop'
+                text: 'News'
+                icon: 'bell-outline'
+
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: 'orders'
+                icon: 'shopping-outline'
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: "Shop"
+                icon: 'home-outline'
+                Shop:
+                    id : shop_id

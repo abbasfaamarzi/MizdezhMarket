@@ -1,0 +1,49 @@
+#_0tools_style_path
+
+#_0tools_style_path
+#start_import
+<Wellcome>
+    #start_ObjectProperty
+    name : 'wellcome'
+    MDIconButton:
+        icon : "close"
+        pos_hint : {'center_y' : .94, 'center_x' : .09}
+        on_press:
+            app.root.current = 'main_screen'
+    MDIconButton:
+        icon : "shopping-outline"
+        icon_size : 70
+        pos_hint : {'center_y' : .8, 'center_x' : .5}
+    MDLabel:
+        text : "[size=20][b]Wellcome to Mizdezh Market[/b][/size]\n[size=14]you can by alot of goods from us![/size]"
+        markup : True
+        halign : "center"
+        theme_text_color : "Custom"
+        text_color : [0,0,0,.5]
+        pos_hint : {'center_y' : .68, 'center_x' : .5}
+
+    MDRoundFlatButton:
+        text : "Continue"
+        pos_hint : {'center_x' : .5, 'center_y' : .55}
+        line_color : [0,0,0,0]
+        md_bg_color : app.theme_cls.primary_palette.lower()
+        size_hint_x : None
+        size_hint_x : .9
+        theme_text_color : "Custom"
+        text_color : "black"
+        on_press:
+            app.root.current = 'account_info'
+    MDSeparator:
+        pos_hint : {'center_y' : .25, 'center_x' : .5}
+        size_hint_x : None
+        size_hint_x : .9
+    MDTextButton:
+        md_bg_color : app.theme_cls.bg_normal
+        text : "Complete Your account!"
+        theme_text_color : "Custom"
+        font_size : 16
+        bold : True
+        halign : "center"
+        pos_hint : {'center_x' : .5, 'center_y' : .25}
+        theme_text_color : "Custom"
+        text_color : [0,0,0,.5]
